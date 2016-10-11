@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Realtalk (https://realtalkchat.herokuapp.com/)
 
-Things you may want to cover:
+This is an application to test out some things in Rails that I really wanted to learn and try out.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Login with Devise (pretty much done)
+2. A mailer for user registration etc. (not yet)
+3. Realtime updates with ActionCable and Redis (not yet)
