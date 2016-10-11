@@ -1,0 +1,28 @@
+<div class="login-btn-row">
+  <%= link_to "Log In", new_user_session_path, class: "realtalk-btn btn btn-primary btn-lg inactive" %>
+  <%= link_to "Sign Up", new_user_registration_path, class: "realtalk-btn btn btn-primary btn-lg" %>
+</div>
+<br>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.email_field :email, placeholder: "Email", autofocus: true %>
+    <%= render partial: "/devise/shared/field_error", locals: { resource: @user, field: :email } %>
+  </div>
+
+  <div class="field">
+    <% if @minimum_password_length %>
+      <% min = "(At least #{@minimum_password_length} characters)" %>
+    <% end %>
+    <%= f.password_field :password, placeholder: "Password #{min}", autocomplete: "off" %>
+    <%= render partial: "/devise/shared/field_error", locals: { resource: @user, field: :password } %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password", autocomplete: "off" %>
+    <%= render partial: "/devise/shared/field_error", locals: { resource: @user, field: :password_confirmation } %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "realtalk-btn btn btn-primary btn-lg" %>
+  </div>
+<% end %>

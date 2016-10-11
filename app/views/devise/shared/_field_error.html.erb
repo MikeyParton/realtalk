@@ -1,0 +1,6 @@
+<% if resource.errors.messages[field].present? %>
+    <% resource.errors.messages[field].each do |msg| %>
+        <div class="error-msg"><%=field.to_s.humanize%> <%=msg%></div>
+    <% end %>
+<% else %>
+<% end %>

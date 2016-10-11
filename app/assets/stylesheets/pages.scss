@@ -1,0 +1,45 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.big-logo {
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.medium-logo {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.footer-img{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.realtalk-btn {
+  // .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+  @include button-variant(white, #3291EB, transparent);
+}
+
+.inactive {
+    @include button-variant(#3291EB, white, #3291EB);
+}
+
+
+.login-btn-row {
+    text-align: center;
+    
+    
+    .btn {
+        width: 100px;
+        margin: 10px 0 10px 0;
+    }
+}
