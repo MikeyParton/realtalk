@@ -17,7 +17,7 @@
 }
 
 .footer-img{
-    position: absolute;
+    position: fixed;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -33,6 +33,12 @@
     @include button-variant(#3291EB, white, #3291EB);
 }
 
+.back-btn {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    border-radius: 25px;
+}
 
 .login-btn-row {
     text-align: center;

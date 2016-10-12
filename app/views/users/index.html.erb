@@ -9,16 +9,20 @@
 <% end %>
 
 <div class = "contact-list">
-	<% 10.times do %>
+	<% @users.each do |contact| %>
+		<% if contact.id != current_user.id %>
+		<%= link_to chats_path(sender_id: current_user.id, recipient_id: contact.id), method: "post" do %>
 		<div class= "contact">
 			<div class= "user-thumbnail">
 				<%= image_tag "profile1.jpg" %>	
 			</div>
 			<div class= "user-info">
-				<h4>Username</h4>
-				<p>User email</p>
+				<h4><%= contact.name %></h4>
+				<p><%= contact.email %></p>
 			</div>
 		</div>
+		<% end %>
 		<hr>
+		<% end %>
 	<% end %>
-<div>
+</div>

@@ -2,26 +2,29 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-// Clear default field classes
-input[type="email"],
-input[type="password"] {
-    display: block;
-    margin: 0;
-    width: 100%;
-    font-family: sans-serif;
-    font-size: 18px;
-    -webkit-appearance: none;
-    appearance: none;
-    box-shadow: none;
-    border-radius: 0;
-    
-    &:focus{
-        outline: none;
-    }
-}
-
 .login-container {
+    
+    position: relative;
+    
+    // Clear default input field classes
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        display: block;
+        margin: 0;
+        width: 100%;
+        font-family: sans-serif;
+        font-size: 18px;
+        -webkit-appearance: none;
+        appearance: none;
+        box-shadow: none;
+        border-radius: 0;
+
+        &:focus{
+            outline: none;
+        }
+    }
+    
     background-color: white;
     padding: 20px;
     max-width: 400px;

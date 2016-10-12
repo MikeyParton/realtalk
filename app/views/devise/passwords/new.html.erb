@@ -1,12 +1,7 @@
 <h2>Reset Password</h2>
 
-<%= link_to new_user_session_path do %>
-	<button class="side-btn realtalk-btn btn btn-primary btn-lg">
-		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	</button>	
-<% end %>
+<%= link_to icon("arrow-left"), new_user_session_path, class: "back-btn btn btn-lg realtalk-btn" %>
 <br>
-
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 
   <div class="field">
