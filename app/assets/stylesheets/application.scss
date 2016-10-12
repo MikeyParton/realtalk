@@ -73,6 +73,7 @@
     bottom: 0;
     ul {
         display: flex;
+        display: -webkit-flex;
     }
     li {
         text-align: center;
@@ -107,6 +108,7 @@
         height: 100px;
         width: 100%;
         display: flex;
+        display: -webkit-flex;
         align-items: center;
     }
     
@@ -135,6 +137,7 @@
         height: 100px;
         width: 100%;
         display: flex;
+        display: -webkit-flex;
         align-items: center;
         color: #333333
     }
@@ -158,6 +161,7 @@
 
 .personal-info {
     display: flex;
+    display: -webkit-flex;
     position: relative;
     
     .field {
