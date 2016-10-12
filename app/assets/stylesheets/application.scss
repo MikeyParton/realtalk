@@ -146,14 +146,23 @@
     
     .last-msg {
         flex-grow: 1;
+        white-space:nowrap;
+        overflow:hidden;
         -webkit-flex-grow: 1;
-        padding-left: 20px;
+        padding: 0 0 0 20px;
     }
     
     .date {
         text-align: right;
         flex-shrink: 0;
         -webkit-flex-shrink: 0;
+        padding: 0 0 0 20px;
+    }
+    
+    .truncate {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     
 }

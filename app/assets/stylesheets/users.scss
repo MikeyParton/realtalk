@@ -21,30 +21,28 @@ input[type="password"] {
     }
 }
 
-.internal-square {
+.login-container {
     background-color: white;
     padding: 20px;
-    width: 400px;
+    max-width: 400px;
     text-align: center;
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translate(-50%);
+    margin: 50px auto 0 auto;
     border: 5px solid #3291EB ;
     border-radius: 30px;
-}
 
-.style-4 input:not([type="submit"]){
-    padding: 10px;
-    border: none;
-    color: #2466a5;    
-    border-bottom: solid 2px #c9c9c9;
-    transition: border 0.5s, color 0.5s;
-    margin-bottom: 10px;
 
-    &:focus{
-        border-bottom: solid 2px #3291EB;
-        color: #3291EB; 
+    input:not([type="submit"]){
+        padding: 10px;
+        border: none;
+        color: #2466a5;    
+        border-bottom: solid 2px #c9c9c9;
+        transition: border 0.5s, color 0.5s;
+        margin-bottom: 10px;
+
+        &:focus{
+            border-bottom: solid 2px #3291EB;
+            color: #3291EB; 
+        }
     }
 }
 
