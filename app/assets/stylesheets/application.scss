@@ -146,6 +146,11 @@
         color: #333333
     }
     
+    .user-thumbnail {
+        flex-shrink: 0;
+        -webkit-flex-shrink: 0;
+    }
+    
     .last-msg {
         flex-grow: 1;
         white-space:nowrap;
