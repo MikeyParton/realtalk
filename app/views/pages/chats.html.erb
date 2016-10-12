@@ -1,0 +1,28 @@
+<% content_for :navbar_contents do %>
+	<ul class="nav-center">
+	  <li><%= icon('comment') %></span>&nbsp;<span>Chats</span></li>
+	</ul>
+<% end %>
+
+<% content_for :footer_contents do %>
+	<%= render '/shared/standard_footer' %>
+<% end %>
+
+<div class = "chat-list">
+	<% 10.times do %>
+		<%= link_to chat_path, class: "chat" do %>
+			<div class= "user-thumbnail">
+				<%= image_tag "profile1.jpeg" %>	
+			</div>
+			<div class= "last-msg">
+				<h3>Username</h3>
+				<p>I just wanted to say hello!</p>
+			</div>
+			<div class= "date">
+				<p>OCT 10</p>
+				<p>2:24am</p>
+			</div>
+		<% end %>
+		<hr>
+	<% end %>
+<div>

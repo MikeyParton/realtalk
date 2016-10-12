@@ -1,0 +1,24 @@
+<% content_for :navbar_contents do %>
+	<ul class="nav-center">
+	  <li><%= icon('user') %>&nbsp;<span>Contacts</span></li>
+	</ul>
+<% end %>
+
+<% content_for :footer_contents do %>
+	<%= render '/shared/standard_footer' %>
+<% end %>
+
+<div class = "contact-list">
+	<% 10.times do %>
+		<div class= "contact">
+			<div class= "user-thumbnail">
+				<%= image_tag "profile1.jpeg" %>	
+			</div>
+			<div class= "user-info">
+				<h3>Username</h3>
+				<p>User email</p>
+			</div>
+		</div>
+		<hr>
+	<% end %>
+<div>

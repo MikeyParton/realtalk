@@ -1,0 +1,27 @@
+<% content_for :navbar_contents do %>
+	<ul class="nav-left">
+	  <li><%= link_to icon('arrow-left'), chats_path %></span></li>
+	</ul>
+	<ul class="nav-center">
+	  <li><span>Some Other User</span></li>
+	</ul>
+<% end %>
+
+<% content_for :footer_contents do %>
+	<ul>
+	  <li>
+	  	<div class="input-group">
+      		<input type="text" class="form-control" placeholder="Write your message...">
+      		<span class="input-group-btn">
+        		<button class="realtalk-btn btn btn-primary" type="button">Send</button>
+      		</span>
+    	</div>
+	  </li>
+	</ul>
+<% end %>
+
+<div class = "chat-window">
+	<p class="other-user msg">This is a message</p>	
+	<p class="current-user msg">This is another message</p>
+	<p class="current-user msg">Let's see what happens when I make a reeally long message like this one I wrote here.</p>
+<div>

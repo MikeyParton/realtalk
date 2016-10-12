@@ -2,19 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.alert {
-    margin-top: 20px;
-}
-
-.alert-alert {
-  @extend .alert-warning;
-  display: none;
-}
-
-.alert-notice {
-  @extend .alert-info;
-  display: none;
-}
 
 // Clear default field classes
 input[type="email"],
@@ -40,9 +27,9 @@ input[type="password"] {
     width: 400px;
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 50px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
     border: 5px solid #3291EB ;
     border-radius: 30px;
 }

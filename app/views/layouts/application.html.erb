@@ -10,6 +10,12 @@
 
   <body>
 
+    <nav class="nav-mobile">
+      <div class="container-fluid">
+        <%= yield :navbar_contents %>
+      </div>
+    </nav>
+
   	<div class="container">
   		<% flash.each do |key, value| %>
     		<div class="alert alert-<%= key %>">
@@ -18,10 +24,15 @@
   		<% end %>
 	</div>
 
-
-	<div class="container">
+	<div class="container-fluid main-content">
 	  <%= yield %>
 	</div>
+
+  <footer class="footer-mobile">
+    <div class="container-fluid">
+      <%= yield :footer_contents %>
+    </div>
+  </footer>
 
   </body>
 </html>

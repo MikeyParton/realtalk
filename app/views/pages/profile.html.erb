@@ -1,0 +1,36 @@
+<% content_for :navbar_contents do %>
+	<ul class="nav-center">
+	  <li><%= icon('cog') %></span>&nbsp;<span>Profile</span></li>
+	</ul>
+<% end %>
+
+<% content_for :footer_contents do %>
+	<%= render '/shared/standard_footer' %>
+<% end %>
+
+<div class = "profile-header">
+	<div class= "user-thumbnail">
+		<%= image_tag "profile1.jpeg" %>	
+	</div>
+	<h3>Username</h3>
+	<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "realtalk-btn btn btn-primary btn-lg" %>
+</div>
+<hr>
+<div class = "personal-info">
+	<div class="field">Username:</div>
+	<div class="value">username</div>
+	<div class="edit"><%= link_to icon('edit'), "#", class: "btn realtalk-btn btn-primary" %></div>
+</div>
+<hr>
+<div class = "personal-info">
+	<div class="field">Email:</div>
+	<div class="value">email@gmail.com</div>
+	<div class="edit"><%= link_to icon('edit'), "#", class: "btn realtalk-btn btn-primary" %></div>
+</div>
+<hr>
+<div class = "personal-info">
+	<div class="field">Password:</div>
+	<div class="value">password</div>
+	<div class="edit"><%= link_to icon('edit'), "#", class: "btn realtalk-btn btn-primary" %></div>
+</div>
+<hr>
