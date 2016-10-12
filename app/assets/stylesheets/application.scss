@@ -106,7 +106,7 @@
 .contact-list {
     
     .contact {
-        height: 100px;
+        height: 60px;
         width: 100%;
         display: flex;
         display: -webkit-flex;
@@ -123,9 +123,9 @@
 
 .user-thumbnail {
     img {
-        height: 100px;
-        width: 100px;
-        border-radius: 50px;
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
     }
 }
 
@@ -137,7 +137,7 @@
     }
     
     .chat {
-        height: 100px;
+        height: 60px;
         width: 100%;
         display: flex;
         display: -webkit-flex;
@@ -149,6 +149,12 @@
     .user-thumbnail {
         flex-shrink: 0;
         -webkit-flex-shrink: 0;
+        
+        img {
+            height: 60px;
+            width: 60px;
+            border-radius: 30px;
+        }
     }
     
     .last-msg {
@@ -178,6 +184,16 @@
 
 .profile-header{
     text-align: center;
+    
+    .user-thumbnail {
+        
+        img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+        }
+    }
+    
 }
 
 .personal-info {
