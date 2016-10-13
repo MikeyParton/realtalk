@@ -9,7 +9,8 @@
 <% end %>
 
 <div class = "chat-list">
-	<% @chats.each do |chat| %>
+	<% if @chats.any? %>
+		<% @chats.each do |chat| %>
 		<%= link_to chat_messages_path(chat.id), class: "chat" do %>
 			<div class= "user-thumbnail">
 				<%= image_tag "profile1.jpg" %>	
@@ -27,5 +28,14 @@
 			</div>
 		<% end %>
 		<hr>
+		<% end %>
+	<% else %>
+		<%= image_tag "realtalk.png", class: "medium-logo" %>
+		<h4>Welcome to Realtalk <%= current_user.name %></h4>
+		<p>You currently have no chats. To start a chat, click on Contacts and choose someone to talk to.</p>
+		<div class="instructions">
+			<h3>Contacts</h3>
+			<%= icon("arrow-down")%>
+		</div>
 	<% end %>
 <div>

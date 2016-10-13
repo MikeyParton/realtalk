@@ -184,6 +184,23 @@
       text-overflow: ellipsis;
     }
     
+    .instructions {
+        position: absolute;
+        bottom: 65px;
+        left: 10px;
+        width: 33%;
+        text-align: center;
+        font-size: 40px;
+        color: #3291EB;
+        animation: up-and-down 2s infinite;
+    }
+    
+    @keyframes up-and-down {
+    0%   {transform: translateY(0)}
+    50% {transform: translateY(20px)}
+    100% {transform: translateY(0)}    
+}
+    
 }
 
 /* Profile page */
