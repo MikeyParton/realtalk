@@ -96,5 +96,9 @@ Rails.application.configure do
       :password       => ENV['gmail_password'],
       :domain         => 'heroku.com',
       :enable_starttls_auto => true
-  }          
+  }
+    
+  config.web_socket_server_url = "wss://realtalkchat.herokuapp.com/cable"
+    config.action_cable.allowed_request_origins = ['https://realtalkchat.herokuapp.com',
+        'http://realtalkchat.herokuapp.com']    
 end
