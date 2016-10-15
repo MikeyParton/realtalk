@@ -12,4 +12,11 @@ class User < ApplicationRecord
       Chat.where("sender_id = ? OR recipient_id = ?", self.id, self.id)
   end
     
+  def notifications #Number of conversations with unread messages by the user
+        a = chats.map do |chat| 
+            chat.id if chat.messages.unread(id).any?  
+        end
+        a.compact
+  end    
+    
 end

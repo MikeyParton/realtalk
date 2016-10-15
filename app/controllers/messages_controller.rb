@@ -5,14 +5,17 @@ class MessagesController < ApplicationController
         @message = @chat.messages.new
         @messages = @chat.messages
         session[:chat_id] = @chat.id
+        @chat.read(current_user)
+        puts session[:last_page]
     end
     
     def create
         @chat = Chat.find(params[:chat_id])
         @message = @chat.messages.build(message_params)
         if @message.save
-            redirect_to chat_messages_path(@chat)
-        else
+            #Chats are ordered based on recent activity
+            @chat.touch 
+            head :ok
         end
     end
     

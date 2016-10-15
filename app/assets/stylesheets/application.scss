@@ -2,7 +2,9 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "pages";
+@import "devise_login";
+@import "chats";
+@import "messages";
 @import "users";
 
 /*
@@ -87,231 +89,47 @@
     margin: 70px 0 70px 0;
 }
 
+// Custom buttons
+
+.realtalk-btn {
+  // .button-variant(@btn-primary-color; @btn-primary-bg; @btn-primary-border);
+  @include button-variant(white, #3291EB, transparent);
+}
+
+.inactive {
+    @include button-variant(#3291EB, white, #3291EB);
+}
+
+.back-btn {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    border-radius: 25px;
+}
+
+// Notifications
+
 .msg-icon {
     position: relative;
 }
 
-.notification {
+#notification-container {
     position: absolute;
     top: -5px;
     right: -15px;
+    width: 20px;
+    height: 20px;
+}
+
+.notification {
+    text-align: center;
+    color: white;
     width: 20px;
     height: 20px;
     background-color: red;
     border-radius: 12.5px;
     font-size: 12px;
     padding: 2px 0 0 0;
-}
-
-/* Contacts page */
-.contact-list {
-    
-    a {
-        text-decoration: none;
-        color: black;
-    }
-    
-    .contact {
-        height: 60px;
-        width: 100%;
-        display: flex;
-        display: -webkit-flex;
-        align-items: center;
-        -webkit-align-items: center;
-    }
-    
-    .user-info {
-        flex-grow: 1;
-        -webkit-flex-grow: 1;
-        padding-left: 20px;
-    }
-}
-
-.user-thumbnail {
-    img {
-        height: 60px;
-        width: 60px;
-        border-radius: 30px;
-    }
-}
-
-/* Chats page */
-.chat-list {
-    
-    a {
-        text-decoration: none;
-    }
-    
-    .chat {
-        height: 60px;
-        width: 100%;
-        display: flex;
-        display: -webkit-flex;
-        align-items: center;
-        -webkit-align-items: center;
-        color: #333333
-    }
-    
-    .user-thumbnail {
-        flex-shrink: 0;
-        -webkit-flex-shrink: 0;
-        
-        img {
-            height: 60px;
-            width: 60px;
-            border-radius: 30px;
-        }
-    }
-    
-    .last-msg {
-        flex-grow: 1;
-        white-space:nowrap;
-        overflow:hidden;
-        -webkit-flex-grow: 1;
-        padding: 0 0 0 20px;
-    }
-    
-    .date {
-        text-align: right;
-        flex-shrink: 0;
-        -webkit-flex-shrink: 0;
-        padding: 0 0 0 20px;
-    }
-    
-    .truncate {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    
-    .instructions {
-        position: absolute;
-        bottom: 65px;
-        left: 10px;
-        width: 33%;
-        text-align: center;
-        font-size: 40px;
-        color: #3291EB;
-        animation: up-and-down 2s infinite;
-    }
-    
-    @keyframes up-and-down {
-    0%   {transform: translateY(0)}
-    50% {transform: translateY(20px)}
-    100% {transform: translateY(0)}    
-}
-    
-}
-
-/* Profile page */
-
-.profile-header{
-    text-align: center;
-    
-    .user-thumbnail {
-        
-        img {
-            height: 100px;
-            width: 100px;
-            border-radius: 50px;
-        }
-    }
-    
-}
-
-.personal-info {
-    display: flex;
-    display: -webkit-flex;
-    position: relative;
-    
-    .field {
-        width: 100px;
-        text-align: right;
-        font-weight: 600;
-    }
-    
-    .value {
-        padding-left: 20px;
-        flex-grow: 1;
-        -webkit-flex-grow: 1;
-    }
-    
-    .edit {
-        position: absolute;
-        top: -7px;
-        right: 0;
-    }
-}
-
-/* Specific Chat page */
-
-.other-user.msg {
-  display: table;
-  position: relative;
-  padding: 10px;     
-  background-color: #00D471;
-  border-radius: 5px;
-  margin: 0 auto 10px 15px;
-  color: white;
-  text-align: left;
-}
-
-.other-user.msg:after {
-    content: ' ';
-    position: absolute;
-    width: 0;
-    height: 0;
-    left: -15px;
-    top: 5px;
-    border-style: solid;
-    border-width: 15px 26.0px 15px 0;
-    border-color: transparent #00D471 transparent transparent;
-    z-index: -1;
-}
-
-.current-user.msg {
-  display: table;
-  position: relative;
-  padding: 10px;     
-  background-color: #007bff;
-  border-radius: 5px;
-  margin: 0 15px 10px auto;
-  color: white;
-  text-align: left;
-}
-
-.current-user.msg:after {
-    content: ' ';
-    position: absolute;
-    right: -15px;
-    top: 5px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 15px 0 15px 26.0px;
-    border-color: transparent transparent transparent #007bff;
-    z-index: -1;
-}
-
-.new_message {
-    display: flex;
-    display: -webkit-flex;
-    align-items: center;
-
-    input[type="text"]{
-        flex-grow: 1;
-        -webkit-flex-grow: 1;
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-    }
-    
-    input[type="submit"]{
-        flex-shrink: 0;
-        -webkit-flex-shrink: 0;
-        border: 1px solid white;
-        border-bottom-left-radius: 0;
-        border-top-left-radius: 0;
-    }
 }
 
 /* Alerts */
@@ -332,4 +150,26 @@
 .alert-notice {
   @extend .alert-info;
   display: none;
+}
+
+.big-logo {
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.medium-logo {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.footer-img{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
 }

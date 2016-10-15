@@ -1,112 +1,71 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.login-container {
+/* Contacts page */
+.contact-list {
     
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .contact {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+    }
+    
+    .user-info {
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
+        padding-left: 20px;
+    }
+}
+
+.user-thumbnail {
+    img {
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+    }
+}
+
+/* Profile page */
+
+.profile-header{
+    text-align: center;
+    
+    .user-thumbnail {
+        
+        img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+        }
+    }
+    
+}
+
+.personal-info {
+    display: flex;
+    display: -webkit-flex;
     position: relative;
     
-    // Clear default input field classes
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-        display: block;
-        margin: 0;
-        width: 100%;
-        font-family: sans-serif;
-        font-size: 18px;
-        -webkit-appearance: none;
-        appearance: none;
-        box-shadow: none;
-        border-radius: 0;
-
-        &:focus{
-            outline: none;
-        }
+    .field {
+        width: 100px;
+        text-align: right;
+        font-weight: 600;
     }
     
-    background-color: white;
-    padding: 20px;
-    max-width: 400px;
-    text-align: center;
-    margin: 50px auto 0 auto;
-    border: 5px solid #3291EB ;
-    border-radius: 30px;
-
-
-    input:not([type="submit"]){
-        padding: 10px;
-        border: none;
-        color: #2466a5;    
-        border-bottom: solid 2px #c9c9c9;
-        transition: border 0.5s, color 0.5s;
-        margin-bottom: 10px;
-
-        &:focus{
-            border-bottom: solid 2px #3291EB;
-            color: #3291EB; 
-        }
-    }
-}
-
-.field_with_errors{
-    input:not([type="submit"]){
-        color: red;    
-        border-bottom: solid 2px #f9bdbd;
-        transition: border 0.5s, color 0.5s;
-        
-        &:focus {
-            border-bottom: solid 2px red; 
-            color: red;
-        }       
+    .value {
+        padding-left: 20px;
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
     }
     
-    ::-webkit-input-placeholder{
-       color: red;
-       transition: color 0.5s;    
+    .edit {
+        position: absolute;
+        top: -7px;
+        right: 0;
     }
-
-    input:focus::-webkit-input-placeholder{
-        color: red;
-    }
-}
-
-.error-msg {
-    text-align: left;
-    color: red;
-    margin: 0 0 20px 10px;
-    width: 100%;
-}
-
-// placeholder text
-::-webkit-input-placeholder{
-   color: #c9c9c9;
-   transition: color 0.5s;    
-}
-
-// placeholder color change
-input:focus::-webkit-input-placeholder
-{
-    color: #3291EB;
-}
-
-.side-btn{
-    text-align: center;
-    font-size: 32px;
-    width: 75px;
-    height: 75px;
-    border-radius: 37.5px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-105px, -50%);
-    
-    .glyphicon {
-        display: block;
-        margin: auto;
-    }
-}
-
-.actions {
-    padding-top: 20px;
 }

@@ -1,0 +1,7 @@
+<% if msg.text.present? %>
+	<% if msg.user_id == current_user.id %>
+		<p class="current-user msg"><%= msg.text %></p>
+	<% else %>
+		<p class="other-user msg"><%= msg.text %></p>
+	<% end %>
+<% end %>

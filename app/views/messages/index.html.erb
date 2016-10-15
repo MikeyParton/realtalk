@@ -11,9 +11,9 @@
 	<ul>
 	  <li>
 	  	<div class="msg-input">
-	  	<%= form_for [@chat, @message] do |f| %>
+	  	<%= form_for [@chat, @message], remote: true do |f| %>
 	  		<%= f.hidden_field :user_id, value: current_user.id %>
-      		<%= f.text_field :text, class: "form-control", placeholder: "Write your message..." %>
+      		<%= f.text_field :text, class: "form-control", placeholder: "Write your message...", autofocus: true %>
         	<%= f.submit "Send", class: "realtalk-btn btn btn-primary" %>
     	<% end %>
     	</div>
@@ -21,14 +21,8 @@
 	</ul>
 <% end %>
 
-<div class = "chat-window">
+<div id="messages" class = "chat-window" data-chat-id = <%= @chat.id %>>
 	<% @messages.each do |msg| %>
-		<% if msg.text.present? %>
-			<% if msg.user_id == current_user.id %>
-				<p class="current-user msg"><%= msg.text %></p>
-			<% else %>
-				<p class="other-user msg"><%= msg.text %></p>
-			<% end %>
-		<% end %>
+		<%= render partial: 'message', locals: {msg: msg} %>
 	<% end %>
 <div>

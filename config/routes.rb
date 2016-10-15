@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     
   devise_for :users
     
-  root to: 'chats#index'     
+  root to: 'chats#index'
+  
+  #Mount websocket connection    
+  mount ActionCable.server => '/cable'
     
 end

@@ -14,13 +14,16 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require cable
+//= require_tree
 
 console.log("[global.js]");
 
 $(function(){
 
-    $(document).ready(function(){
+    
+    
+    $(document).ready(function(e){
         $(".alert").fadeIn("slow");
     });
     

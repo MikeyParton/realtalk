@@ -1,0 +1,89 @@
+$(document).on('turbolinks:load', function() {   
+    
+    function messages_to_bottom(animate){
+        if (animate === true){
+            $('body').animate({scrollTop: $('body').prop("scrollHeight")}, 500);
+        }
+        else {
+            $('body').animate({scrollTop: $('body').prop("scrollHeight")}, 0)
+        }      
+    }
+    
+    function submitNewMessage(){
+      $('#new_message').submit(function() {
+            var text = $("#message_text").val()
+            App['chat' + chat_id].send({text: text})
+            $('#message_text').val("");
+            return false;
+        });
+    } 
+
+    if($('.chat-window').length > 0){
+        messages = $('.chat-window');
+        chat_id = messages.data('chat-id');    
+        user_id = parseInt($('#message_user_id').val()) ;    
+        messages_to_bottom();
+        submitNewMessage();
+    }
+
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/chats",
+        success: function(data){
+            $.each(data, function(i, chat){
+                if (App['chat' + chat.id] == undefined){
+                    App['chat' + chat.id] = App.cable.subscriptions.create({channel: "ChatChannel", chat_subscribe_id: chat.id}, {
+                        received: function(data){
+                            //Append message to chat window if open
+                            if ($('.chat-window').length > 0){
+                                if (chat_id == data.chat_id){
+                                    if (user_id == data.user_id){
+                                        $('#messages').append("<div class='current-user msg'>" + data.text + "</div>");
+                                    }
+                                    else{
+                                        $('#messages').append("<div class='other-user msg'>" + data.text + "</div>");
+                                    }
+                                    $('#message_text').val('');
+                                    messages_to_bottom(animate = true);
+                                }
+                            }
+
+                            //Update last message if on chats index page
+                            if ($('.chat-list').length > 0){
+                                chat = $("#chat-" + data.chat_id);
+                                //reposition hr
+                                chat.next().prependTo('.chat-list');       
+                                //reposition chat element
+                                chat.prependTo('.chat-list');              
+                                //update last message
+                                chat.find(".truncate").html(data.text);
+                                //update time and date
+                                chat.find(".date").html("<p>" + data.date+ "</p>" + "<p>" + data.time + "</p>");
+                                //update chat-notify
+                                if (data.last_read == true){
+                                    chat.find(".chat-notify").html("<div class='notification'>1</div>");
+                                }
+                            }
+
+                            //Update notifications
+                            if ($('#notification-container').length > 0){
+                                //just in case I put notifications on chat page
+                                if (data.last_read == true){
+                                    notifications =  parseInt($("#notification-container.notification").html());
+                                    if (isNaN(notifications)){
+                                        notifications = 0
+                                    }
+                                    notifications += 1;
+                                    notifications = notifications.toString();
+                                    $("#notification-container").html("<div class='notification'>" + notifications + "</div>");
+                                    return false;
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+        }
+    });
+});

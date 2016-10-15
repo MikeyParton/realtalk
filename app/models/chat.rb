@@ -12,4 +12,11 @@ class Chat < ApplicationRecord
                 sender: sender_id, receiver: recipient_id
             )
     end
+    
+    def read(user) #Marks all readable messages by a user as read
+        messages.unread(user.id).each do |message|
+            message.update(read: true)
+        end
+    end
+    
 end

@@ -1,0 +1,24 @@
+<% if chat.messages.any? %>
+	<%= link_to chat_messages_path(chat.id), id: "chat-#{chat.id}" ,class: "chat" do %>
+		<div class= "user-thumbnail">
+			<%= image_tag avatar(other_user(chat)) %>
+			<div class="chat-notify">
+				<% if chat.messages.unread(current_user.id).any? %>
+					<div class="notification"> 1 </div>
+				<% end %>
+			</div>	
+		</div>
+		<div class= "last-msg">
+			<h4><%= other_user(chat).name %></h4>
+			<p class="truncate">
+				<%= icon("reply") if current_user.id == chat.messages.last.user_id %>
+				<%= chat.messages.last.text %>
+			</p>
+		</div>
+		<div class= "date">
+			<p><%= chat.messages.last.created_at.strftime("%b %d") %></p>
+			<p><%= chat.messages.last.created_at.strftime("%l:%M%p") %></p>
+		</div>
+	<% end %>
+<% end %>
+<hr>

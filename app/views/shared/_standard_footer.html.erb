@@ -3,8 +3,12 @@
   <li>
     <a class="msg-icon" href=<%= chats_path %>>
       <%= icon('comment') %>
-      <div class="notification">
-        9
+      <div id="notification-container">
+      <% if current_user.notifications.any? %>
+          <div class="notification">
+            <%= current_user.notifications.count %>
+          </div>
+      <% end %>
       </div>
     </a>
   </li>

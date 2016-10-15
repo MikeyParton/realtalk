@@ -4,8 +4,17 @@ class ChatsController < ApplicationController
         if !user_signed_in?
             redirect_to new_user_session_path
         else
-            @chats = current_user.chats
-            session[:last_page] = chats_path
+            @chats = current_user.chats.order('updated_at DESC')
+            respond_to do |format|
+              format.html do
+                  session[:last_page] = chats_path
+                  if last_chat = Chat.find_by(id: session[:chat_id])
+                     last_chat.read(current_user)
+                    session[:chat_id] = nil
+                  end
+                end
+              format.json { render json: @chats }
+            end
         end
     end
     

@@ -1,3 +1,76 @@
-// Place all the styles related to the chats controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Chats page */
+.chat-list {
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .chat {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        color: #333333
+    }
+    
+    .user-thumbnail {
+        flex-shrink: 0;
+        -webkit-flex-shrink: 0;
+        position: relative;
+        
+        .chat-notify {
+            position: absolute;
+            top: -5px;
+            right: -2px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        img {
+            height: 60px;
+            width: 60px;
+            border-radius: 30px;
+        }
+    }
+    
+    .last-msg {
+        flex-grow: 1;
+        white-space:nowrap;
+        overflow:hidden;
+        -webkit-flex-grow: 1;
+        padding: 0 0 0 20px;
+    }
+    
+    .date {
+        text-align: right;
+        flex-shrink: 0;
+        -webkit-flex-shrink: 0;
+        padding: 0 0 0 20px;
+    }
+    
+    .truncate {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .instructions {
+        position: absolute;
+        bottom: 65px;
+        left: 10px;
+        width: 33%;
+        text-align: center;
+        font-size: 40px;
+        color: #3291EB;
+        animation: up-and-down 2s infinite;
+    }
+    
+    @keyframes up-and-down {
+    0%   {transform: translateY(0)}
+    50% {transform: translateY(20px)}
+    100% {transform: translateY(0)}    
+}
+    
+}

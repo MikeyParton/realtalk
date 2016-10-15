@@ -10,7 +10,7 @@
 
 <div class = "profile-header">
 	<div class= "user-thumbnail">
-		<%= image_tag "profile1.jpg" %>	
+		<%= image_tag avatar(current_user) %>	
 	</div>
 	<h3><%= current_user.name %></h3>
 	<%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "realtalk-btn btn btn-primary btn-lg" %>

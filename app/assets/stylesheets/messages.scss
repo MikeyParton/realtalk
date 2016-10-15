@@ -1,3 +1,72 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Specific Chat page */
+
+.other-user.msg {
+  display: table;
+  position: relative;
+  padding: 10px;     
+  background-color: #00D471;
+  border-radius: 5px;
+  margin: 0 auto 10px 15px;
+  color: white;
+  text-align: left;
+}
+
+.other-user.msg:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -15px;
+    top: 5px;
+    border-style: solid;
+    border-width: 15px 26.0px 15px 0;
+    border-color: transparent #00D471 transparent transparent;
+    z-index: -1;
+}
+
+.current-user.msg {
+  display: table;
+  position: relative;
+  padding: 10px;     
+  background-color: #007bff;
+  border-radius: 5px;
+  margin: 0 15px 10px auto;
+  color: white;
+  text-align: left;
+}
+
+.current-user.msg:after {
+    content: ' ';
+    position: absolute;
+    right: -15px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 26.0px;
+    border-color: transparent transparent transparent #007bff;
+    z-index: -1;
+}
+
+.new_message {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+
+    input[type="text"]{
+        flex-grow: 1;
+        -webkit-flex-grow: 1;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border-color: white;
+        color: #3291EB;
+    }
+    
+    input[type="submit"]{
+        flex-shrink: 0;
+        -webkit-flex-shrink: 0;
+        border: 1px solid white;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+    }
+}
