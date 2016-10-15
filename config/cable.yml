@@ -6,4 +6,4 @@ test:
 
 production:
   adapter: redis
-  url: ENV['redis_url']
+  url: redis://redistogo:060a0464ef80e30708bc51ed25b46fa2@sculpin.redistogo.com:10542/
